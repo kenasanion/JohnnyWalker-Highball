@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Johnny Walker</title>
+    
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: grid;
+            justify-items: center;
+        }
+
+        .johnny-walker-wrapper {
+            width: 970px;
+            height: 250px;
+        }
+    </style>
+</head>
+<body>
+    <div id="johnny-walker" class="johnny-walker-wrapper"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.1/lottie.min.js"></script>
+    <script>
+        var animation = bodymovin.loadAnimation({
+            container: document.getElementById('johnny-walker'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: 'https://cdn.statically.io/gh/kenasanion/JohnnyWalker/3bd91153/Highball/970x250/data.json'
+        })
+    </script>
+</body>
+</html>
