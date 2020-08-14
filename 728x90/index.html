@@ -1,8 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script type="text/javascript" charset="utf-8">
+        function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+        var clickTAG = getParameterByName("clickTAG");
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="ad.size" content="width=728,height=90">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Johnny Walker</title>
     
@@ -16,15 +27,12 @@
             display: grid;
             justify-items: center;
         }
-
-        .johnny-walker-wrapper {
-            width: 728px;
-            height: 90px;
-        }
     </style>
 </head>
 <body>
-    <div id="johnny-walker" class="johnny-walker-wrapper"></div>
+    <a href="javascript:window.open(window.clickTAG);void(0);">
+        <div id="johnny-walker" class="johnny-walker-wrapper"></div>
+    </a>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.1/lottie.min.js"></script>
     <script>
